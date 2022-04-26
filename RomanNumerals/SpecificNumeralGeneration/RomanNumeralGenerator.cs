@@ -13,13 +13,13 @@ namespace RomanNumerals.SpecificNumeralGeneration
         public RomanNumeralGenerator(int number = 3999)
         {
             MaxNumber = number;
+            Mapper = new RomanNumeralMapper();
         }
 
         public string Generate(int number)
         {
             if (number < 1 || number > MaxNumber) return "Please enter int value from 1 to 3999";
 
-            Mapper = new RomanNumeralMapper();
             var romanNumeral = string.Empty;
 
             while (number > 0)
